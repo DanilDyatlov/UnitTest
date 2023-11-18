@@ -1,4 +1,4 @@
-package seminars.fourth.card;
+package fourth.card;
 
 public class CreditCard {
     private String cardNumber;
@@ -33,4 +33,3 @@ public class CreditCard {
         System.out.println("Charged amount " + amount + " from the card: " + cardNumber);
     }
 }
-

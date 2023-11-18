@@ -1,6 +1,7 @@
-package seminars.fourth.database;
+package fourth.database;
 
 import java.util.List;
+
 
 public class DataProcessor {
     private Database database;

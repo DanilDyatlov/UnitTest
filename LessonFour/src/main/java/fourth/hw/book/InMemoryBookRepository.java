@@ -1,9 +1,10 @@
-package seminars.fourth.book;
+package fourth.hw.book;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 public class InMemoryBookRepository implements BookRepository  {
     private final Map<String, Book> books;
@@ -20,7 +21,7 @@ public class InMemoryBookRepository implements BookRepository  {
     }
 
     @Override
-    public List<Book> findAll() {
+    public List<Book> findAll(String s) {
         return new ArrayList<>(books.values());
     }
 }

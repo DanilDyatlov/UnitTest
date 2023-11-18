@@ -1,24 +1,13 @@
 package fourth;
 
-import seminars.fourth.book.Book;
-import seminars.fourth.book.BookRepository;
-import seminars.fourth.book.BookService;
-import seminars.fourth.book.InMemoryBookRepository;
-import seminars.fourth.database.DataProcessor;
-import seminars.fourth.database.Database;
-import seminars.fourth.hotel.BookingService;
-import seminars.fourth.hotel.HotelService;
-import seminars.fourth.message.MessageService;
-import seminars.fourth.message.NotificationService;
-import seminars.fourth.weather.WeatherReporter;
-import seminars.fourth.weather.WeatherService;
+import fourth.hw.book.Book;
+import fourth.hw.book.BookRepository;
+import fourth.hw.book.BookService;
+import fourth.hw.book.InMemoryBookRepository;
 
 import java.util.List;
 
 public class Main {
-
-
-
 
     //**
     // 4.3. Предположим, у вас есть класс WeatherService, который имеет метод getCurrentTemperature(),
@@ -27,34 +16,21 @@ public class Main {
     // Создайте мок-объект для WeatherService с использованием Mockito.
     // *
 
-    public static void main(String[] args) {
-        // Создаем объект WeatherService. В реальной программе, этот класс
-        // бы обращался к внешнему API для получения температуры.
-        WeatherService weatherService = new WeatherService();
-
-        // Создаем объект WeatherReporter, передаем ему WeatherService в конструктор.
-        WeatherReporter weatherReporter = new WeatherReporter(weatherService);
-
-        // Получаем отчет о погоде.
-        String report = weatherReporter.generateReport();
-
-        // Выводим отчет на консоль.
-        System.out.println(report);
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
+//    public static void main(String[] args) {
+//        // Создаем объект WeatherService. В реальной программе, этот класс
+//        // бы обращался к внешнему API для получения температуры.
+//        WeatherService weatherService = new WeatherService();
+//
+//        // Создаем объект WeatherReporter, передаем ему WeatherService в конструктор.
+//        WeatherReporter weatherReporter = new WeatherReporter(weatherService);
+//
+//        // Получаем отчет о погоде.
+//        String report = weatherReporter.generateReport();
+//
+//        // Выводим отчет на консоль.
+//        System.out.println(report);
+//
+//    }
 
     //*
 // 4.4.
@@ -85,26 +61,6 @@ public class Main {
 //        }
 //    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /*
       4.5. Вам нужно написать тест с использованием моков для сервиса отправки сообщений.
       Условие: У вас есть класс MessageService с методом public void sendMessage(String message, String recipient),
@@ -118,31 +74,6 @@ public class Main {
 //
 //        notificationService.sendNotification("Привет!", "Анна");
 //    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     /*
         4.6.Вам требуется протестировать класс, который обрабатывает запросы к базе данных.
@@ -166,40 +97,22 @@ public class Main {
 //        }
 //    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /*
     * HW4.3. У вас есть класс BookService, который использует интерфейс BookRepository
     * для получения информации о книгах из базы данных.
     *  Ваша задача написать unit-тесты для BookService, используя Mockito для создания мок-объекта BookRepository.
     * */
-//    public static void main(String[] args) {
-//        BookRepository repository = new InMemoryBookRepository();
-//        BookService bookService = new BookService(repository);
-//
-//        Book book1 = bookService.findBookById("1");
-//        System.out.println("Найдена книга: " + book1.getTitle() + " by " + book1.getAuthor());
-//
-//        List<Book> allBooks = bookService.findAllBooks();
-//        System.out.println("Все книги:");
-//        for (Book book : allBooks) {
-//            System.out.println("- " + book.getTitle() + " от " + book.getAuthor());
-//        }
-//    }
+    public static void main(String[] args) {
+        BookRepository repository = new InMemoryBookRepository();
+        BookService bookService = new BookService(repository);
+
+        Book book1 = bookService.findBookById("1");
+        System.out.println("Найдена книга: " + book1.getTitle() + " by " + book1.getAuthor());
+
+        List<Book> allBooks = bookService.findAllBooks("Шерлок Хомс");
+        System.out.println("Все книги:");
+        for (Book book : allBooks) {
+            System.out.println("- " + book.getTitle() + " от " + book.getAuthor());
+        }
+    }
 }

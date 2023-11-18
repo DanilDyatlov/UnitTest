@@ -4,9 +4,10 @@ import org.junit.jupiter.api.Test;
 
 
 import java.util.*;
+import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 
 class MainTest {
@@ -14,7 +15,7 @@ class MainTest {
     /**
      * 4.0. Проверка работы Mockito
      */
-     @Test
+    @Test
     public void simpleTest() {
         // Создаем мок
         List<String> mockedList = mock(List.class);
@@ -33,13 +34,15 @@ class MainTest {
      * чтобы за два вызова next() Iterator вернул два слова  “Hello World”,
      * и проверить это поведение с помощью утверждений
      */
-      @Test
-      public void iteratorWillReturnHelloWorld() {
-          // Arrange
-          Iterator iteratorMock = mock(Iterator.class);
-          //when(iteratorMock.next()).thenReturn("Hello")...;
-          // Act
-          // ...
-      }
+    @Test
+    public void iteratorWillReturnHelloWorld() {
+        // Arrange
+        Iterator iteratorMock = mock(Iterator.class);
+        when(iteratorMock.next()).thenReturn("Hello").thenReturn("World!");
+        // Act
+        String result = iteratorMock.next() + " " + iteratorMock.next();
+        // ...
+        assertThat(result).isEqualTo("Hello World!");
+    }
 
 }

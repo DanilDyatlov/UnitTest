@@ -1,4 +1,4 @@
-package seminars.fourth.message;
+package fourth.message;
 
 public class MessageService {
     public void sendMessage(String message, String recipient) {

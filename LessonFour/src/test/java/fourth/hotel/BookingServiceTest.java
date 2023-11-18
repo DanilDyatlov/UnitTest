@@ -1,4 +1,4 @@
-package seminars.fourth.hotel;
+package fourth.hotel;
 
 
 class BookingServiceTest {

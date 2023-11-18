@@ -1,4 +1,4 @@
-package hw;
+package hw.task1;
 
 public class taskOne {
     // HW 3.1. Нужно покрыть тестами метод на 100%

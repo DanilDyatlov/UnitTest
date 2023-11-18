@@ -1,4 +1,4 @@
-package seminars.fourth.weather;
+package fourth.weather;
 
 import java.util.Random;
 

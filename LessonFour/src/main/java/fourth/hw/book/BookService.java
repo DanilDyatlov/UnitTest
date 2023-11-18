@@ -1,6 +1,7 @@
-package seminars.fourth.book;
+package fourth.hw.book;
 
 import java.util.List;
+
 
 public class BookService {
     private BookRepository bookRepository;
@@ -13,8 +14,8 @@ public class BookService {
         return bookRepository.findById(id);
     }
 
-    public List<Book> findAllBooks() {
-        return bookRepository.findAll();
+    public List<Book> findAllBooks(String s) {
+        return bookRepository.findAll("Шерлок Хомс");
     }
 }
 

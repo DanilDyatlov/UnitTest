@@ -1,4 +1,4 @@
-package seminars.fourth.book;
+package fourth.hw.book;
 
 public class Book {
     private String id;
